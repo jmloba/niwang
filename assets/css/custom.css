@@ -34,9 +34,10 @@ h1,h2,h3,h4,h5{
   margin: 0;
 }
 
-
+/* menu text-color */
 a,a:hover, a:visited{
-  color : #3211e9;
+  color :rgb(23, 3, 246);
+  font-size: 15px;
 
 }
 .color1{
@@ -425,37 +426,25 @@ my-container-1{
 }
 
 
-.btn-mybtn{
+.btn.btn-mybtn{
   background-color : rgb(174, 201, 174);
   color : blue;
   width :auto;
   font-size: 10px;
   margin : 3px 0px;
 }
+.btn.btn-mybtn:hover{
+  color : white !important;
+  background-color: #057242;
+}
 
 
 .btn-mybtn a{
   text-decoration: None;
-  
-  
 }
 .btn-mybtn button{
   text-decoration: None;
 }
-
-.btn-mybtn:hover{
-  background-color: rgb(46, 18, 225);
-}
-
-.btn-mybtn a:hover{
-  color : yellow;
-  text-decoration: None;
-}
-.btn-mybtn:hover{
-  color : yellow;
-  text-decoration: None;
-}
-
 .other-links{
   display:flex;
   flex-wrap: wrap;

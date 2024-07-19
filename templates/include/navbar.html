@@ -31,38 +31,38 @@
         <a href="{% url 'articles:home_page' %}"><span aria-hidden="true">00</span>Home</a>
       </li> -->
       <li>
-        <a href="{% url 'articles:main_page' %}"><span aria-hidden="true">01</span>Main</a>
+        <a href="{% url 'articles:main_page' %}"><span aria-hidden="true"></span>Main</a>
       </li>
       {% if user.is_authenticated %}
 
         <li>
-          <a href="{% url 'articles:article_list' %}"><span aria-hidden="true">02</span>Articles</a>
+          <a href="{% url 'articles:article_list' %}"><span aria-hidden="true"></span>Articles</a>
         </li>
         {% if user.user.article_create %}
           <li>
-            <a href="{% url 'articles:article_create' %}"><span aria-hidden="true">03</span>Create Articles</a>
+            <a href="{% url 'articles:article_create' %}"><span aria-hidden="true"></span>Create Articles</a>
           </li>    
         {%endif %}
         <li>
-          <a href="{% url 'app_booking:RoomList' %}"><span aria-hidden="true">03</span>Rooms</a>
+          <a href="{% url 'app_booking:RoomList' %}"><span aria-hidden="true"></span>Rooms</a>
         </li>            
 
         <!-- logout -->
-        <li class="nav-item">
-          <span><a class="nav-link" id="logout-button" href="{% url 'accounts:logout_view' %}">Logout</a></span>
+        <li>
+          <a  id="logout-button" href="{% url 'accounts:logout_view' %}"><span aria-hidden="true"></span>Logout</a>
+        </li>            
 
-        </li>
 
       
         <!-- inquire -->
         <li>
             <a href="{% url 'app_mail:email_me' %}">
-              <span aria-hidden="true">04</span>Inquire
+              <span aria-hidden="true"></span>Inquire
             </a>
         </li>
         {% if user.user.programmer_access %}
         <li class="nav-item dropdown ">
-          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown-feature" role="button"
+          <a href="#" class=" dropdown-toggle" id="navbarDropdown-feature" role="button"
           data-bs-toggle ="dropdown"
           aria-expanded="false"
           >
