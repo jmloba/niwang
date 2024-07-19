@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  /* font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto; */
+  --main-font:  "Roboto Condensed", sans-serif;
+  --main-font-weight : 200;
+  --main-font-style :  normal;
+  --main-font-size : 16px;
+
+
+  --color1 : #071952;
+  --color2 : #088395;
+  --color3 : #35A29F;
+  --color4 : #F2F7A1;
+ 
+ /* gold groups color */
+   --colorgold1 : #884A39;
+   --colorgold2 : #C38154;
+   --colorgold3 : #FFC26F;
+   --colorgold4 : #F9E0BB;
+ 
+   --border-gold: #ac9e69;
+   --border-color:var(--border-gold);
+   --border-color2:var(--border-gold2);
+ 
+   --color-article-title  :rgb(20, 53, 144);
+   --card-background: #f9e0bbf9;
+
+   --my-container-background:#dbeedda9;
+   
+   --color-fb-blue :rgba(53, 32, 237, 0.885);
+   --color-bloody-red : #fd1f1f;
+ 
+   --margin-top : 0;
+   --margin-right : 0;
+   --margin-left : 0;
+   --margin-bottom : 0;
+
+  /* --box-shadow1 :  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+  --box-shadow1 :  0 4px 8px 0 rgba(195, 186, 146, 0.95), 0 6px 20px 0 rgba(169, 201, 230, 0.664);
+
+  --webkit_box_shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+ --moz_box_shadow :  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+ }

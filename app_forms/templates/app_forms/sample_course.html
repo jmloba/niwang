@@ -1,0 +1,70 @@
+{% extends  'main/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">
+
+{% block content %}
+
+
+<section id="sample_course">
+  <div class="my-container my-container-para " style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+ 
+  <div class="container d-flex justify-content-center">
+    <div class="course-list">
+      <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">Course</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in courses %}
+          <tr>
+            <th>{{course}}</th>
+         
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+      
+
+    </div>
+
+    <div class="course-entry">
+      <form action="{% url 'app_forms:sample_course' %}" method="POST">
+
+        {% csrf_token %}
+        {% for field in form_course %}
+          <div class="fieldWrapper">
+          {{field.errors}}
+          {{field.label_tag}} {{field}}
+          {% if field.help_text %}
+          <p class="help">{{field.help_text|safe}}</p>
+          {% endif %}
+          </div>
+        {% endfor %}
+         <br> 
+        <input type="submit" class="btn btn-primary" value="submit" >
+      
+      
+       </form>
+
+    </div>
+
+  </div>
+
+
+
+     
+ 
+
+</section>
+
+
+
+{% endblock %}

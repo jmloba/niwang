@@ -1,0 +1,100 @@
+{% load static%}
+<header class="primary-header mheader flex">
+  <div class="logo">
+    <a href="{% url 'articles:main_page' %}">
+      <img src="/assets/logo/logo.jpg" alt="logo" width="35">
+    </a>
+    <user-div>
+      <small>
+        <span id="hello-msg">Hello, {{request.user}}  </span>
+      </small>   
+  
+    </user-div>
+    
+  </div>
+
+  <!-- aria-control is linked in nav id  -->
+  <button 
+  class="mobile-nav-toggle"
+ 
+  aria-controls="primary-navigation"
+  aria-expanded="false">
+  <span class="sr-only"></span>
+
+  </button>
+
+  <nav >
+    <ul id="primary-navigation" 
+        data-visible="false" 
+        class="primary-navigation flex">
+      <!-- <li>
+        <a href="{% url 'articles:home_page' %}"><span aria-hidden="true">00</span>Home</a>
+      </li> -->
+      <li>
+        <a href="{% url 'articles:main_page' %}"><span aria-hidden="true">01</span>Main</a>
+      </li>
+      {% if user.is_authenticated %}
+
+        <li>
+          <a href="{% url 'articles:article_list' %}"><span aria-hidden="true">02</span>Articles</a>
+        </li>
+        {% if user.user.article_create %}
+          <li>
+            <a href="{% url 'articles:article_create' %}"><span aria-hidden="true">03</span>Create Articles</a>
+          </li>    
+        {%endif %}
+        <li>
+          <a href="{% url 'app_booking:RoomList' %}"><span aria-hidden="true">03</span>Rooms</a>
+        </li>            
+
+        <!-- logout -->
+        <li class="nav-item">
+          <span><a class="nav-link" id="logout-button" href="{% url 'accounts:logout_view' %}">Logout</a></span>
+
+        </li>
+
+      
+        <!-- inquire -->
+        <li>
+            <a href="{% url 'app_mail:email_me' %}">
+              <span aria-hidden="true">04</span>Inquire
+            </a>
+        </li>
+        {% if user.user.programmer_access %}
+        <li class="nav-item dropdown ">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown-feature" role="button"
+          data-bs-toggle ="dropdown"
+          aria-expanded="false"
+          >
+            Programmers
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-feature" >
+            <li><a href="{% url 'app_mail:email-list-view' %}" class="dropdown-item">Email_list</a></li>
+
+            {% if user.user.todo_rights %}
+            <li><a href="{% url 'appsample:todo_add' %}" class="dropdown-item">Add Todo </a></li>
+            {% endif %}
+            <!-- sample forms -->
+            <li><a href="{% url 'app_forms:topics' %}" class="dropdown-item">Topics</a></li>
+
+
+          </ul>
+        </li>
+        <!-- -- end feature1 dropdown -- -->
+        {% endif %}
+      {% else %}
+      <li>
+        <a href="{% url 'accounts:login_view' %}"><span aria-hidden="true">05</span>Login</a>
+      </li>   
+      <li>
+        <a href="{% url 'accounts:register_view' %}"><span aria-hidden="true">06</span>Register</a>
+      </li>   
+      {% endif %}
+
+
+
+    </ul>
+   
+
+  </nav>
+</header>

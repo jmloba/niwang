@@ -1,0 +1,52 @@
+{% extends  'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section id="caleb">
+  <div class="my-container my-container-para d-block" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="h-100 border  main-box d-block justify-content-center">
+      <h3 class =" alert alert-danger">Forms <span><small>(by Caleb Curry)</small></span></h3>
+      
+
+      <div class="row justify-content-center ">
+        <div class="column-color-1 col-md-4  stud-form">
+          
+            <h4  class="text-center alert alert-success"> Form</h4>
+            <div class="entry-form">
+              <form action="{% url 'app_forms:caleb-start' %}" method="POST"  enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-primary" type="submit" value="submit">
+
+              </form>
+
+            </div>
+        </div>
+    
+        <div class="column-color-2 col-md-7 form-list">
+          <h4 class="text-center alert alert-info" > List</h4>
+
+
+          
+        </div>
+    
+     
+      
+      </div>
+
+
+    </div>
+ 
+
+  </div>
+</section>
+
+<script src="{% static 'js/app_forms_caleb.js' %}" ></script> 
+
+{% endblock %}

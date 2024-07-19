@@ -1,0 +1,59 @@
+
+
+$('#add-recipe-btn').on('click',function(e){
+  e.preventDefault();
+  console.log('add-recipe-btn clicked');
+  var idRecipe = document.getElementById('id_recipe').value
+  var idName = document.getElementById('id_name').value
+  var idDirection = document.getElementById('id_directions').value
+  var csrf_token = $('input[name=csrfmiddlewaretoken]').val()
+  // from form = add hidden input above button
+  var url = document.getElementById('add_recipe_url').value
+
+  console.log('idRecipe :',idRecipe)
+  console.log('idName :',idName)
+  console.log('idDirection :',idDirection)
+
+  if (idRecipe==''){
+    swal('Required','please enter idRecipe','error')
+  }else if (idName==''){
+    swal('Required','please enter idName','error')
+  }else if(idDirection==''){
+    swal('Required','please enter idDirection','error')
+  }
+  else{
+    print('check ajax')
+    
+  } // end else
+
+
+$.ajax( {
+      type: 'POST',
+      url : url,
+      data : {'recipe' : idRecipe, 
+      'name':idName, 
+      'directions':idDirection,
+      'csrfmiddlewaretoken':csrf_token,
+      },
+      success: function(response){
+        console.log('***** ', response)
+
+
+        if( response.status =='success'){
+          console.log('response name : ',response.name);
+          
+          let qstr="Are you sure you want to delete this ?"
+          html=' <tr id="stud-'+response.id+'"><td>'+response.recipe+'</th><td>'+recipe.name+'</td><td>'+recipe.directions+'</td><td><a  href="/app_forms/edit_recipe/'+response.id+'" style="color:unset"><i class="bi bi-pen-fill"></i></i></i></a>&nbsp;  &nbsp;  &nbsp;<a  href="/app_forms/delete_recipe/'+recipe.id+'" onclick="return confirm('+qstr+')"><i class="bi bi-trash3-fill"></i></a></td></tr>'
+          
+          $('.recipe-list').append(html)
+          document.getElementById('add-recipe-form').reset()
+
+        } else {
+          console.log('response : ',response.status, response);
+        }
+
+      }
+
+
+    }); // ajax end
+});  

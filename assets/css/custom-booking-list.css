@@ -1,0 +1,76 @@
+#booking-list .heading .heading-text{
+  display : flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: 600;
+  color : var( --color-fb-blue);
+}
+#booking-list .heading .heading-text span{
+  color :var(--color-article-title);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+#booking-list .booking-elements{
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+#booking-list .cards
+{
+  margin : 10px 10px;
+  width: 15em;
+
+}
+#booking-list .cards .card-header {
+  background-color :var(--color2);
+}
+#booking-list .cards  .category h5 {
+  color : #ffffff;
+  font-size: 16px;
+
+}
+#booking-list .cards  .category h5 span{
+  color : yellow;
+  font-size: 20px;
+
+}
+
+#booking-list .card-footer{
+  background-color: var(--color3);
+}
+#booking-list .card-footer i {
+  color : var(  --color-bloody-red);
+  font-size: 20px;
+  font-weight: 600;
+
+  position : relative;
+  right:-180px;
+}
+
+#booking-list .list-group-item{
+  background-color: beige;
+}
+#booking-list .list-group-item .by p{
+  color: green;
+  font-weight:600 ;
+
+} 
+
+#booking-list .list-group-item .to span,
+#booking-list .list-group-item .from span{
+  color: brown;
+  font-weight:600 ;
+}
+#booking-list .list-group-item .beds span,
+#booking-list .list-group-item .capacity span{
+  color: blue;
+  font-weight:600 ;
+}
+#booking-list .list-group-item .by span{
+  color: blue;
+  font-weight:400 ;
+  font-size: 16px;
+
+} 

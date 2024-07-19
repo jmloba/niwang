@@ -1,0 +1,91 @@
+.box-flex{
+  display :flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow:hidden;
+}
+.jbox-menu{
+  
+
+  background-color : rgba(239, 239, 156, 0.742);
+  margin : 3em 3em;
+  border-radius: 5px;;
+  border: 2px solid rgba(205, 168, 119, 0.742);;
+
+}
+.jbox{
+
+  width:300px;
+
+  background-color : rgba(239, 239, 156, 0.742);
+  margin : 10px 10px;
+  border-radius: 5px;;
+  border: 2px solid rgba(205, 168, 119, 0.742);;
+}
+.mainbox1{
+  display: block ;
+  justify-content: center;
+  align-items: center;
+}
+#java-sample .my-container .title-center {
+  display : flex;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+}
+#java-sample .my-container .box-flex{
+  display : flex;
+  flex-wrap: wrap;
+}
+
+.box1-prop{
+  margin : 10px 20px;
+  
+
+}
+
+/* navbar */
+#ajaxtutor1 .my-container nav{
+  z-index:0;
+}
+#ajaxtutor1 .my-container nav a
+{
+  color: white;
+  margin-left: 3em;
+}
+
+#ajaxtutor1 .my-container .box-flex .box1-prop .btn{
+  margin: 10px 10px;
+}
+#ajaxtutor1 .my-container .box-flex .jbox h5{
+  font-size : 18px;
+  font-weight : 600;
+  color : var(--color-article-title);
+}
+#ajaxtutor1 ul.list-group  li{
+  list-style-type: None;
+}
+#ajaxtutor1 ul.list-group  li.list-group-item span{
+  color: rgb(68, 15, 214);
+  font-weight:600;
+}
+
+
+#ajaxtutor1 .my-container .box-flex .basic-ajax .row{
+  display : flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-content: center;
+
+}
+
+.card{
+  margin :10px 10px;
+  
+}
+.card-body{
+  overflow:hidden;
+}
+

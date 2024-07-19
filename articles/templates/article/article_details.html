@@ -1,0 +1,51 @@
+
+
+{% extends  'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="article-details" class="bg-light m-5">
+  <h3></h3>
+
+  
+    <div class="my-container my-container-para my-container-bg  align-items-center "
+    style="--margin-top:4em; --margin-right:5em; --margin-left: 5em; --margin-bottom: 2em "    >
+
+    <div class="card" >
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="row ">
+
+      <div class=" div1 box-radius col-lg-7 col-md-10 col-sm-8 m-3 px-1">
+    
+          <div class="article-header text-center"> 
+            <h3 class="page-title-color mb-2">{{article.title}}</h3>
+            <p>{{article.body}}</p>
+          </div>
+      </div>
+
+      <div class="div1 col-lg-4 col-md-5 m-2 px-1 col-sm-8  justify-content-center align-items-center ">
+        <div class="article-header margin: auto; "> 
+          <img class= "article-image" src="{{article.thumb.url}}" alt="picture"   >
+         
+        </div>
+      </div>
+    </div>
+  
+</section>
+
+
+<link rel="stylesheet" href="{% static 'css/custom-articles.css' %}">
+  
+
+{% endblock %}

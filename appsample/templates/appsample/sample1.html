@@ -1,0 +1,71 @@
+
+
+{% extends  'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="todo-section">
+  
+  <div class="my-container my-container-para  d-block text-center"
+  style="--margin-top: 50px ;--margin-right:10% ; margin-left: 10%;">
+
+    <div class="div-form">
+      <form action="{% url 'appsample:todo_add' %}" method = 'POST'>
+        {% csrf_token%}
+        <div class="form-group">
+          <label >Enter Todo: </label>
+          {{form.text}}
+          <button class="btn btn-primary" type="submit" >Submit</button>
+  
+        </div>
+
+        <a href="">link</a>
+        <a href="">link</a>
+        <a href="">link</a>
+      </form>
+
+    </div>
+    <br><br>
+
+    <div class="div-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">user</th>
+            <th scope="col">todo</th>
+            <th scope="col">delete</th>
+            
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for todo in todos %}
+          
+            <tr>
+              <th scope="row">{{todo.user}}</th>
+              <td>{{todo.text}}</td>
+              <td>
+                <span>
+                  <a href="{% url 'appsample:todo_delete' todo.id %}" >
+                  <i class="bi bi-trash text-danger" aria-hidden="true"></i>
+                  </a>
+                </span>
+  
+              </td>
+            
+            </tr>
+          
+          {% endfor%}
+          
+        </tbody>
+      </table>
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+{% endblock %}

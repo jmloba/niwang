@@ -1,0 +1,98 @@
+{% extends  'main/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">
+
+{% block content %}
+
+
+<section id="desphixs">
+  <div class="my-container my-container-para d-block" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="h-100 border  main-box d-block justify-content-center">
+      <h3 class =" alert alert-danger">Student Data Entry <span><small>(Desphixs Tutorial)</small></span></h3>
+      
+
+      <div class="row justify-content-center ">
+        <div class="column-color-1 col-md-4  stud-form">
+          
+            <h4  class="text-center alert alert-success">Student Form</h4>
+            <div class="entry-form">
+
+
+              <form  id="form" action="" method ="POST"  class="form-group"
+              autocomplete="off" >
+              
+              {% csrf_token %}
+                <input type="hidden" name="stuid" id="stuid" >
+
+                <input type="text" name="name" id="id-name"class="form-control mb-2 border" 
+                placeholder="name">
+                
+                <input type="text" name="email" id="id-email"class="form-control mb-2 border" placeholder="email">
+
+                <input type="text" name="course" id="id-course"class="form-control mb-2 border" placeholder="course">
+
+                <input type="submit" id="btn-form-save" class="btn w-100 mb-3 btn-success" value="save" data-url="{% url 'app_forms:desphixs-save-student' %}">
+
+               
+              </form>
+            </div>
+        </div>
+    
+        <div class="column-color-2 col-md-7 stud-list">
+          <h4 class="text-center alert alert-info" >Student List</h4>
+          <table class="table table-striped student-list">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Course</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              {% for student in students %}
+              <tr id="tr-stud-{{student.id}}">
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.name}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.course}}</td>
+                <td>
+                  <input type="button"  class="btn  mb-1 btn-warning btn-edit-desphixs" value="Edit" 
+                  data-url="{% url 'app_forms:desphixs-edit-student' %}"
+                  data-sid="{{student.id}}">
+                  &ensp;&ensp;
+
+                  <input type="button"  class="btn  mb-1 btn-danger btn-delete-desphixs" 
+                  value="Delete"
+                  data-url="{% url 'app_forms:desphixs-delete-student' %}"
+                  data-sid="{{student.id}}">
+
+                </td>
+              </tr>
+              {% endfor %}
+             
+            </tbody>
+          </table>
+
+          
+        </div>
+    
+     
+      
+      </div>
+
+
+    </div>
+ 
+
+  </div>
+</section>
+
+<script src="{% static 'js/app_forms_desphixs.js' %}" ></script> 
+
+{% endblock %}

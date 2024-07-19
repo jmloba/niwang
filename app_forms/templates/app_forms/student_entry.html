@@ -1,0 +1,95 @@
+{% extends  'main/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">
+
+{% block content %}
+
+
+<section id="sample_entry">
+  <div class="my-container my-container-para d-flex" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="container-fluid d-block">
+      <h3 class ="text-center alert alert-danger">Django Ajax Querypresentation</h3>
+      <div class="row d-flex wrap ">
+
+        <div class="col-md-4">
+          
+            <h4  class="d-flex justify-content-center text-center alert alert-success">Add/Update Students</h4>
+            <div class="entry-form">
+              <form  id="add-student-form" action="" method ="POST" autocomplete="off" >
+                {% csrf_token%}
+                {{form.as_p}}
+                
+                <input type="button" class="btn btn-success" value="Submit" id="add-student-btn" data-url="{% url 'app_forms:save_student_record' %}">
+              </form>
+            </div>
+        </div>
+    
+        <div class="col-md-7">
+          <h4 class="text-center alert alert-info" >List of Students  in University</h4>
+          
+          <table class="table table-hover student-list">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Course</th>
+                <th scope="col">action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body" >
+              {% for student in students%}
+              <tr id="stud-{{student.id}}">
+                <td> {{student.id}}</th> 
+                <td> {{student.name}}</th>
+                <td>{{student.email}}</td>
+                <td>{{student.course}}</td>
+                <td>
+                  <button class="btn btn-danger btn-sm btn-delete-student" 
+                  data-url="{% url 'app_forms:remove_student' student.id %}" 
+                  value="{{student.id}}"
+                  formnovalidate
+
+                  >Delete
+                  
+                  </button>
+                  &nbsp;  &nbsp;  &nbsp;
+                  <button class="btn btn-info btn-sm btn-edit-student" 
+                  data-url="{% url 'app_forms:edit_student' student.id %}" 
+                  value="{{student.id}}"
+                  formnovalidate
+                  >Edit
+                  
+                  </button>
+                  
+                 
+                </td>
+                
+              </tr>
+              {%endfor%}
+            
+            </tbody>
+          </table>
+        </div>
+    
+        <div class=" col-md-1">
+          <h4 class="text-center alert alert-danger">column</h4>
+    
+        </div>
+      
+      </div>
+
+
+    </div>
+ 
+
+</div>
+</section>
+
+<script src="{% static 'js/app_forms_student_entry.js' %}" ></script> 
+
+{% endblock %}

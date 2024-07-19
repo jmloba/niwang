@@ -1,0 +1,39 @@
+#room-cancellation .row-left{
+  margin-bottom : 20px;
+}
+#room-cancellation .row-right .other-links{
+  
+  display : flex;
+  justify-content: space-evenly;
+  
+}
+#room-cancellation .head-pix{
+  display: flex;
+  flex:wrap;
+  justify-content: space-between;
+}
+#room-cancellation .head-pix i{
+  font-size : 20px;
+
+}
+#room-cancellation .room-pic img{
+  border-radius: 10x;
+}
+#room-cancellation .row-right .card{
+  background-color: var(--border-gold);
+}
+#room-cancellation .card-title{
+color : #fff;
+}
+#room-cancellation form{
+  background-color: #ffff;
+  padding : 15px 15px;
+
+}
+#room-cancellation form p span{
+  color : blue;
+
+}
+#room-cancellation .question-cancel{
+  color: rgb(236, 39, 39);
+}

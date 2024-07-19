@@ -1,0 +1,44 @@
+{% extends  'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="article-detail-2">
+
+  <div class="my-container my-container-para my-container-bg  align-items-center "
+  style="--margin-top:4em; --margin-right:5em; --margin-left: 5em; --margin-bottom:4em; ">
+  <div class="div-content">
+    <div class="content-item-title">
+      {{article.title}}
+    </div>
+
+    <div class="content-item ">
+      <div class="content-item-details ">
+        <img class="article-pix card-item" src="{{article.thumb.url}}" alt="pix"  >
+      </div>
+      <div class="content-item-details content-desc">
+        {{article.body}}    
+      </div>
+      
+    </div>
+  
+
+  </div>
+  
+
+
+
+
+
+
+
+
+  </div>
+
+ 
+  
+
+</section>
+<link rel="stylesheet" href="{% static 'css/custom-articles.css' %}">
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+test nbo
+
+https://www.youtube.com/watch?v=5QPirQpUk74
+https://www.youtube.com/watch?v=5QPirQpUk74  51:
+https://www.youtube.com/watch?v=5QPirQpUk74
+
+
+
+class Category(models.Model) :
+  name = models.CharField(max_length=50, blank = False)
+
+
+  
+class Product (models.Model) :
+  product_number=models.CharField(max_length=50, unique=True, blank=False, null=False)
+  name = models.CharField("Product Name ",max_length=50,default="no-name")
+  is_active= models.BooleanField(default=True)
+  

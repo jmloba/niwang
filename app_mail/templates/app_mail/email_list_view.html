@@ -1,0 +1,102 @@
+{% extends  'main/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section id="email-listview" >
+  <div class="my-container my-container-para my-container-bg d-block"
+  style="--margin-top:2em; --margin-left: 5em; --margin-right: 5em;"
+  >
+  {%include 'app_mail/headerlink-ans-email.html' %} 
+  <hr>
+    <div class="main-div">
+ 
+
+    <div class=" table-list">
+      <div>
+        <h3>Incoming Email List</h3>
+      </div>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">From</th>
+            <th scope="col">Message</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-email-in">
+          {% for email in emails %}
+          <tr id="tr-rec-{{email.id}}">
+            <th id="tr-email-from-{{email.id}}">{{email.email_from}}</th>
+            <td >{{email.email_body}}</td>
+            <td>{{email.created_date}}</td>
+            <td>
+              <div class="email-action">
+                <button class="btn btn-mybtn" type="submit"
+                data-sid="{{email.id}}" id="btn-email-reply"
+                data-url="{% url 'app_mail:email-reply' %}"
+                data-email="{{email.email_from}}"
+                >
+                  <a href="">Reply</a>
+                </button>  
+
+
+                <button class="btn btn-danger btn-mybtn" 
+                data-sid="{{email.id}}" id="btn-emailin-delete"
+                data-url="{% url 'app_mail:emailin-delete' %}"
+                >
+                  <a href="">Delete</a>
+
+                </button>                  
+              </div>
+
+            </td>
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+    </div>
+
+    <div class=" form-div">
+      <form action="" method = 'POST' class = "email-form">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <div class="form-group">
+          <label for="form-data-email">Send Email to:</label>
+          {% render_field form.email_to placeholder="email to" class+="form-control email-to" id="form-data-email" %}
+      
+          <label for="form-data-body">Message:</label>
+          {% render_field form.email_body placeholder="email body..." class="form-control message-area" id="form-data-body" %}
+      
+          <label for="form-data-package">Package Amount:</label>
+          {% render_field form.package_amount placeholder="Amount" class+="form-control package-amount"  id="form-data-package"  %}
+      
+          <input type="hidden" name="email-record" id="email-record" value="0" >
+          <br>
+      
+          <button id="button-reply" class="btn btn-primary btn-mybtn"
+          type="submit"
+          data-sid="{{email.id}}" id="btn-reply"
+          data-url="{% url 'app_mail:email-list-view' %}"
+           >Send    </button>
+        </div>
+      
+    
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<link rel="stylesheet" href="{% static 'css/custom-email.css' %}">
+
+<script src="{% static 'js/app_mail.js' %}" ></script> 
+
+
+{% endblock %}

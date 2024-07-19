@@ -1,0 +1,56 @@
+{% extends  'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="article_list">
+  <div class="container-lg">
+
+    <div class="my-container my-container-para my-container-bg  align-items-center "
+    style="--margin-top:3em; --margin-right:5em; --margin-left: 5em; "    >
+
+    
+        {% for article in articles %}
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{article.title}}</h5>
+            <p class="card-text">{{article.snippet}}</p>
+            <a href="{% url 'articles:article_detail_view' article.id %}" class="btn btn-primary">{{article.title}}</a>
+          </div>
+        </div>
+
+          <div class=" item general-card-spec " style="--boxlength: 300px; --margin-right:10px;
+          --margin-left:10px; --border-width:3px;" >
+            <div class="card-item-arrangement">
+
+              <div class="card-title ">
+                <a href="{% url 'articles:article_detail_view' article.id %}" class="article-title text-center">{{article.title}}</a>
+              </div>
+              <div >
+                <p >{{article.snippet}}</p>
+              </div>
+            </div>
+
+            <div class="image-display">
+              <img class="article-list-img" src="{{article.thumb.url}}" alt="picture">
+            </div>
+
+            <div class="text-end">
+              {% if user.user.article_delete%}
+              <a  href="{% url 'articles:article_delete' article.id %}"><i class="bi bi-trash-fill"></i></a>
+              {%endif%}
+            </div>
+
+          </div>
+       
+        {% endfor %}
+     
+    </div>
+
+  </div>
+
+</section>
+
+<link rel="stylesheet" href="{% static 'css/custom-articles.css' %}">
+
+{% endblock %}

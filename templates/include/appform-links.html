@@ -1,0 +1,99 @@
+{% load static %}
+
+
+<div class="container">
+
+
+    <section class="topic-section">
+      <div class="topic-div">
+        <h5>Forms</h5>
+        <div class="details">
+
+          
+          <button class="btn btn-mybtn"><a  href="{% url 'app_forms:sample_course' %}">course</a></button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+    
+    <section id="topic-section2">
+      <div class="topic-div ">
+        <br/>
+        <h5>Ajax Tutor</h5>
+        <div class="details">
+
+
+          <button class="btn btn-mybtn"><a  href="{% url 'appsample:java_sample1' %}">java_sample1</a></button>          
+          <button class="btn btn-mybtn"><a  href="{% url 'bootstrap_test:flex_views' %}">bootstrap flexview</a></button>    
+                
+  
+             
+          <button class="btn btn-mybtn"><a  href="{% url 'app_photos:photos_main' %}">Ajax-Photos</a></button>   
+     
+  
+
+          <button class="btn btn-mybtn"><a  href="{% url 'app_forms:desphixs_start' %}">Ajax-DESPHIXS</a></button>  
+
+          <button class="btn btn-mybtn"><a  href="{% url 'app_forms:caleb-start' %}">CalebCury-Forms</a></button>        
+
+          <button class="btn btn-mybtn">
+            <a  href="{% url 'app_booking:RoomList' %}">Room List</a>
+          </button>   
+          <button class="btn btn-mybtn">
+            <a  href="{% url 'app_booking:BookingList' %}">Booking List</a>
+          </button>   
+
+
+   
+
+     
+
+          
+
+        </div>
+        
+      </div>
+
+    </section>
+    <section id="foreign-key">
+      <div class="topic-div ">
+        <br/>
+        <h5>Foreignkeyssample </h5>
+        <div class="details">
+          <button class="btn btn-mybtn"><a  href="{% url 'app_forms:product-category' %}">product category foreignkey</a></button>
+
+            
+        </div>
+      </div>  
+
+    </section>
+    <section id="formset">
+      <div class="topic-div ">
+        <br/>
+        <h5>Formset</h5>
+        <div class="details">
+          <button class="btn btn-mybtn"><a  href="{% url 'app_forms:sample-formset' %}">formset</a></button>
+        </div>
+      </div>  
+
+    </section>
+    <section id="appform-sec-mail" >
+      <div class="topic-div ">
+        <br/>
+        <h5>Mail</h5>
+        <div class="details">
+          <button class="btn btn-mybtn"><a  href="{% url 'app_mail:email_list' %}">Email View</a></button>
+        </div>
+      </div>  
+
+    </section>
+
+
+
+
+
+</div>
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">

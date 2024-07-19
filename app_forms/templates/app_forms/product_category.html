@@ -1,0 +1,118 @@
+{% extends  'main/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<section id="sec-category">
+  <div class="my-container my-container-para d-block" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="h-100 border  main-box d-block justify-content-center">
+      <h3 class =" alert alert-danger">Product / Category  Entry <span><small>(xxxx Tutorial)</small></span></h3>
+   
+
+      <div class="row justify-content-center ">
+     
+          <div class="column-color-1 col-md-4  category-form">
+          
+            <h4  class="text-center alert alert-success">Category Form</h4>
+            <div class="category-entry-form">
+
+              <form id="category-form" action="" method="POST" class="form-group"
+              autocomplete="off" >
+                {% csrf_token %}
+                <label for="id-name">Category Name</label>
+                <input type="text" id="id-name" class="form-control">
+                <br><br>
+              <button type="submit" id="btn-categ-save" data-url="{% url 'app_forms:category-save' %}">Save</button>
+
+
+
+
+              
+              </form>
+
+            </div>
+          </div>   
+    
+          <div class="column-color-2 col-md-7 categ-list">
+            <h4 class="text-center alert alert-info" >Category List</h4>
+            <div class="category-list-div">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Action</th>
+                    
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  {% for categ_item in category %}
+                  <tr>
+                    <th scope="row">{{categ_item.id}}</th>
+                    <td>{{categ_item.name}}</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm btn-categ-edit" data-sid="{{categ_item.id}}">
+                        <i class="bi bi-pen"></i>
+                      </button>
+                      
+                      &ensp;&ensp;
+                      <button class="btn btn-danger btn-sm " 
+                      data-sid="{{categ_item.id}}" id="btn-categ-delete"
+                      data-url="{% url 'app_forms:category-delete' %}"
+                      >
+                        <i class="bi bi-trash3"></i>
+                      </button>
+                    </td>
+                    
+                  </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+            
+
+            
+          </div>
+      </div>
+      <div class="row justify-content-center ">
+     
+        <div class="column-color-1 col-md-4  product-form">
+          <h4  class="text-center alert alert-success">Product Form</h4>
+          <div class="product-entry-form">
+            <form action="">
+
+            </form>
+
+          </div>
+
+        </div>
+        <div class="column-color-1 col-md-7  product-list">
+          <h4 class="text-center alert alert-info" >Product List</h4>
+          <div class="product-list-div">
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+ 
+
+  </div>
+</section>
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">
+<script src="{% static 'js/app_forms_product_category.js' %}" ></script> 
+
+{% endblock %}

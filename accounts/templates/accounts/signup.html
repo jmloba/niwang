@@ -1,0 +1,31 @@
+
+
+
+{% extends  'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="sign_up">
+
+  <div class="container-lg ">
+    <div class="div1 row justify-content-center align-items-center m-5">
+      <div class="col-lg-8 my-3  justify-content-center  align-items-center">
+        <h2>Signup form </h2>  
+
+        <form class="site-form" action="{% url 'accounts:signup_view' %}" method="post">
+          {%  csrf_token %}
+          {{form}}
+          <input type="submit" value="Signup">
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</section> 
+
+
+
+{% endblock %}

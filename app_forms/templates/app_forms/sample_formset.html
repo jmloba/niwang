@@ -1,0 +1,71 @@
+{% extends  'main/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/custom-appforms.css' %}">
+
+{% block content %}
+
+
+<section id="formset-1">
+  <div class="my-container my-container-para d-block" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="h-100 border  main-box d-block justify-content-center">
+      <h3 class =" alert alert-danger">Formset<span><small>(Django )</small></span></h3>
+      
+
+      <div class="row justify-content-center ">
+        <div class="column-color-1 col-md-4  stud-form">
+          
+            <h4  class="text-center alert alert-success">Formset</h4>
+            <div class="entry-form">
+              <form action="{% url 'app_forms:sample-formset' %}" method="POST">
+                {% csrf_token %}
+                {% for form in formset %}
+                {{form}}
+                <br/>
+                {% endfor %}
+                <input type="submit" class= "btn btn-primary" value="Submit">
+
+
+
+              </form>
+
+
+            </div>
+        </div>
+    
+        <div class="column-color-2 col-md-7 stud-list">
+          <h4 class="text-center alert alert-info" >List</h4>
+          <div class="table-list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Course</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for student in studlist %}
+                <tr>
+                  <th scope="row">{{ student.id }}</th>
+                  <td>{{student.name}}</td>
+                  <td>{{student.email}}</td>
+                  <td>{{student.course}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static 'js/app_forms_formset.js' %}" ></script> 
+
+{% endblock %}

@@ -1,0 +1,247 @@
+.course-list{
+  border: var(--border-gold);
+  border-style: solid ;
+  border-radius: 15px;
+}
+.container .appform-links{
+  display : flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  
+  border: var(--border-gold);
+  border-style: solid ;
+  border-radius: 15px;
+  background-color: rgb(247, 244, 218);
+  margin-bottom : 30px;
+  
+
+}
+.container .appform-links .link-items {
+  
+
+  width: 5em;
+  background-color: aquamarine;
+  margin : 1em 1em;
+}
+
+
+
+
+#sample_course .my-container .course-list .table thead tr th{
+  color : blue;
+}
+#sample_course .my-container {
+  display : flex;
+}
+#sample_course .my-container .course-entry{
+margin : 20px 20px;   
+  background-color: var(--card-background);
+padding :  20px 20px;   
+border: var(--border-gold);
+border-style: solid ;
+border-radius: 15px;
+
+display :flex ;
+
+justify-content: center;
+align-items: center;
+
+}
+
+
+
+#photo_sample1 .my-container .form-div form{
+  margin : 20px;
+}
+#photo_sample1 .my-container .form-div{
+  background-color: aqua;
+  margin : 2em 4em;
+  padding : 5px 5px;
+}
+
+
+
+#topic-section .topic-div{
+  display: block;
+
+}
+#topic-section .topic-div .details{
+  display : flex;
+  justify-content: space-between;
+}
+
+
+#sample_entry  .entry-form{
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  
+}
+#sample_entry  .entry-form form{
+  background-color: rgb(220, 233, 215);
+  padding: 2em 2em;
+
+  
+
+}
+#sample_entry  table-div,
+#sample_entry  #add-student-btn,
+#sample_entry  .entry-form form div.column{
+  overflow: hidden;
+}
+#sample_entry  table-body{
+  background-color: azure;
+}
+#sample_entry .table  .btn-delete-student:hover{
+  background-color: rgb(17, 150, 106);
+  color: yellow;
+}
+#sample_recipe1 .my-container .row{
+  justify-content: space-around;
+  background-color: rgb(237, 181, 181);
+}
+#sample_recipe1 .my-container .column-color-1{
+  background-color: aqua;
+}
+#sample_recipe1 .my-container .column-color-2{
+  background-color: rgb(188, 230, 176);
+}
+#sample_recipe1 .my-container .column-color-3{
+  background-color: rgb(123, 136, 117);
+}
+
+#sample_recipe1 .my-container .column-color-1 form{
+  overflow: hidden;
+}
+
+#desphixs .main-box{
+  background-color:rgb(245, 111, 111);
+  padding : 20px 20px;
+  display: block;
+  align-content:space-around;
+  justify-content: center;
+
+}
+#desphixs .main-box h3{
+  display: block;
+}
+#desphixs .main-box .row{
+  display: inline-flexbox;
+  justify-content: space-around;
+}
+#desphixs .main-box .row .stud-form{
+  background-color:  var(  --colorgold4) ;
+  margin-bottom:10px;
+  padding : 15px 15px;
+  
+
+}
+#desphixs .main-box .row .stud-list{
+  background-color:  var(  --colorgold4) ;  
+  margin-bottom:10px;  
+  padding : 15px 15px;
+}
+#desphixs .main-box .row .stud-list{
+  overflow:auto ;
+
+}
+#desphixs .main-box .row .stud-list h4{
+  display: flex;
+  flex-wrap: wrap;
+
+}  
+#caleb .row .stud-form{
+  background-color: coral;
+  margin:20px 10px;
+  padding : 1em 1em;
+
+  display:block;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#caleb .row .entry-form{
+  background-color: rgb(233, 201, 190);
+  padding :20px 20px;
+}
+
+#caleb .row .entry-form form{
+  overflow: auto;
+}
+
+#topic-section2 .topic-div{
+  display : block;
+
+
+}
+#topic-section2 .topic-div .details .btn-mybtn{
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 10px;
+
+}
+
+
+#formset-1 .row .entry-form form{
+  background-color: coral;
+  padding :10px 10px;
+  border-radius: 5px;
+}
+
+#sec-category .row .prod-categ-list tbody td i.bi.bi-pen{
+  color: rgb(56, 82, 17);
+
+}
+
+#sec-category .row .prod-categ-list tbody td i.bi.bi-trash3{
+  color:red;
+
+}
+
+#sec-category .row{
+  margin : 20px;
+  padding:20px 20px; ;
+  background-color: rgb(233, 151, 131);
+}
+#sec-category .row .category-entry-form{
+  background-color: rgb(16, 159, 159);
+}
+
+
+#cairo_coders  .stud-form{
+
+  background-color: rgb(209, 241, 209);
+  padding : 20px 20px;
+
+}
+#cairo_coders .row .form-entry{
+
+  /* margin : 20px  20px; */
+  /* padding : 20px 20px; */
+}
+  
+
+/* 
+.btn-mybtn{
+  background-color : rgb(174, 201, 174);
+  color : white;
+}
+
+.btn,
+.btn-mybtn a{
+  text-decoration: None;
+}
+.btn,
+.btn-mybtn:hover{
+  background-color: rgb(49, 161, 128);
+}
+.btn,
+.btn-mybtn a:hover{
+  color : yellow;
+  text-decoration: None;
+} */

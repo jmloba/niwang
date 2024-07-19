@@ -1,0 +1,23 @@
+#room-detail-view .row-left{
+  margin-bottom : 20px;
+}
+#room-detail-view .row-left img{
+  border-radius: 10px;  
+  
+  
+  position: relative;
+  }
+  #room-detail-view .row-right{
+    display :block;
+  }
+  #room-detail-view .card{
+    display : flex;
+    flex-wrap: wrap;
+    background-color: var(--border-gold);
+
+
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+  }

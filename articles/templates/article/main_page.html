@@ -1,0 +1,33 @@
+
+{% extends  'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="main-page">
+  <div class="my-container my-container-para"  style="--margin-top:4em; --margin-left: 5em; --margin-right: 5em; --margin-bottom:2em;" >
+
+    <div class="col-md-5 ">
+     
+      <div class="home-item-parag">
+        <h3>My Humble Home</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, debitis alias quia cumque tenetur odit exercitationem qui quidem culpa expedita provident sit laboriosa</p>
+      </div>
+
+    </div>
+
+    <div class="image-div col-md-6">
+      <img class="home-image" src="{% static 'images/IMG_1493.jpg' %}" alt="pix" >
+    </div>
+    
+
+  </div>
+</section>
+
+
+  <!-- ---- -->
+
+
+  <link rel="stylesheet" href="{% static 'css/custom-main-page.css' %}">
+
+{% endblock %}

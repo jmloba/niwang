@@ -1,0 +1,104 @@
+{% extends  'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section id="sample_recipe1">
+  <div class="my-container my-container-para d-flex" style="--margin-top:20px; 
+        --margin-right:7%;
+        --margin-left: 7%; "
+  >
+
+    <div class="container-fluid d-block">
+      <h3 class ="text-center alert alert-danger">Recipe</h3>
+      <div class="row ">
+
+        <div class="column-color-1 col-md-3 ">
+          
+            <h4  class="text-center alert alert-success">Add/Update Recipe</h4>
+            <div class="entry-form">
+
+              <form  id="add-recipe-form" action="" method ="POST" autocomplete="off" >
+                {% csrf_token%}
+                <div class="column">
+                  <div class="col-md-3">Recipe	</div>
+
+                  <div class="col-md-3">{{form.recipe}}	</div>
+
+                  <div class="col-md-3">name	</div>
+                  <div class="col-md-3">{{form.name}}</div>
+                  <div class="col-md-3">directions	</div>
+                  
+                  <div class="col-md-4">{{form.directions}}</div>
+                </div>
+
+                <input type="hidden" value="{% url 'app_forms:add_recipe' %}" id="add_recipe_url">
+
+                <button id="add-recipe-btn" class="btn btn-success ">
+                  Add Student	</button>
+
+
+              
+              </form>
+            </div>
+        </div>
+    
+        <div class="column-color-2 col-md-6">
+          <h4 class="text-center alert alert-info" >Recipe Table</h4>
+          
+          <table class="table table-hover recipe-list">
+            <thead>
+              <tr>
+              
+                <th scope="col">Recipe</th>
+                <th scope="col">Name</th>
+                <th scope="col">Directions</th>
+                <th scope="col">action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body" >
+              {% for myrecipe in recipes%}
+              <tr id="stud-{{student.id}}">
+                 
+                <td> {{myrecipe.recipe}}</th>
+                <td>{{myrecipe.name}}</td>
+                <td>{{myrecipe.directions}}</td>
+                <td>
+
+                  <a  href="{% url 'app_forms:edit_recipe' myrecipe.id %}" style="color:unset">
+                    <i class="bi bi-pen-fill"></i></i></i>
+                  </a>
+                  
+                  &nbsp;  &nbsp;  &nbsp;
+                  <a  href="{% url 'app_forms:delete_recipe' myrecipe.id %}" onclick="return confirm('Are you sure you want to delete this category?')"><i class="bi bi-trash3-fill"></i></a>
+                  
+                 
+                </td>
+                
+              </tr>
+              {%endfor%}
+            
+            </tbody>
+          </table>
+
+          
+        </div>
+    
+        <div class=" column-color-3 col-md-1">
+          <h4 class="text-center alert alert-danger">column</h4>
+    
+        </div>
+      
+      </div>
+
+
+    </div>
+ 
+
+</div>
+</section>
+
+<script src="{% static 'js/app_forms_recipe.js' %}" ></script> 
+
+{% endblock %}
