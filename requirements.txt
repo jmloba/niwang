@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asgiref==3.8.1
 beautifulsoup4==4.12.3
 crispy-bootstrap5==2024.2
@@ -26,3 +27,33 @@ sqlparse==0.5.1
 tablib==3.5.0
 typing_extensions==4.12.2
 tzdata==2024.1
+=======
+asgiref==3.8.1
+beautifulsoup4==4.12.3
+crispy-bootstrap5==2024.2
+datatable==1.1.0
+diff-match-patch==20230430
+dj-database-url==2.2.0
+Django==4.2.14
+django-bootstrap-v5==1.0.11
+django-ckeditor==6.7.1
+django-crispy-forms==2.2
+django-extensions==3.2.3
+django-filter==24.2
+django-import-export==4.1.1
+django-js-asset==2.2.0
+django-widget-tweaks==1.5.0
+et-xmlfile==1.1.0
+gunicorn==22.0.0
+openpyxl==3.1.5
+packaging==24.1
+pillow==10.4.0
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
+python-decouple==3.8
+soupsieve==2.5
+sqlparse==0.5.1
+tablib==3.5.0
+typing_extensions==4.12.2
+tzdata==2024.1
+>>>>>>> e96aba747800c2b6d94ffee22cd493122bf3bc18
