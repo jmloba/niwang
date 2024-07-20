@@ -34,14 +34,20 @@
      
   <!-- custom -->
 
-  
-  
-
   <link rel="stylesheet" href="{% static 'css/custom-nav.css' %}">
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <link rel="stylesheet" href="{% static 'css/custom-var.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   
+  <!-- tables -->
+	<script src="//cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#myordersTable').dataTable();
+	});
+
+  </script>  
+
 
 </head>
 <body>

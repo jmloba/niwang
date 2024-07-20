@@ -18,7 +18,7 @@ class EmailDBAdmin(admin.ModelAdmin):
 # answered email  
 class EmailANSAdmin(admin.ModelAdmin):
 
-  list_display=('email_from','email_to','email_body','created_date','package_amount',)
+  list_display=('email_from','email_to','email_ref_id','email_body','created_date','package_amount',)
   
   ordering=('-created_date',)
 

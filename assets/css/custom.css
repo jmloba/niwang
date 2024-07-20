@@ -276,6 +276,7 @@ a,a:hover, a:visited{
   justify-content: center;
 
 
+
 }
 
 
@@ -284,7 +285,7 @@ a,a:hover, a:visited{
 }
 #email_me  .my-container .email-form{
   overflow:hidden;
-  margin-top:5px;
+  margin-top:10px;
   padding : 0px 20px;
 }
 
@@ -314,7 +315,7 @@ my-container-1{
 
 .my-container{
   background-color: var(--my-container-background);
-  margin: 0;
+  margin-top: 0;
 
   display:flex;
   flex-wrap : wrap;
@@ -425,14 +426,6 @@ my-container-1{
 
 }
 
-
-.btn.btn-mybtn{
-  background-color : rgb(174, 201, 174);
-  color : blue;
-  width :auto;
-  font-size: 10px;
-  margin : 3px 0px;
-}
 .btn.btn-mybtn:hover{
   color : white !important;
   background-color: #057242;
@@ -464,23 +457,45 @@ my-container-1{
 }
 
 
-@media only screen and (max-width:391px){
-  *{
+@media only screen and (max-width:390px){
+ *{
     font-size : 12px;
   }
-
+  body{
+    padding : 10px 5px ;
+  }
   .my-container.my-container-para{
-    margin :3em 0;
+    margin-top : 5em  !important;
+    margin-left : 3px !important;
+    margin-right : 3px;
+  }
+
+table td{
+    
+    font-size: 8px;
+    height : 12px;
+  }
+  table td button{
+    height : 10px;
+    width : 10px;
   }
 
 }
-@media only screen and (max-width:690px){
+
+@media (min-width:391px) and (max-width:700px) {
   *{
     font-size : 12px;
   }
-
-  .my-container.my-container-para{
-    margin :3em 0;
+  body{
+    padding : 10px 5px ;
   }
+  .my-container.my-container-para{
+    margin-top : 5em  !important;
+    margin-left : 10px !important;
+    margin-right : 10px;
+  }
+
+}
+@media (min-width:701)  {
 
 }

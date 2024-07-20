@@ -1,6 +1,6 @@
 
 
-$('#tbody-email-in').on('click','#btn-emailin-delete', function(e){
+$('#tbody').on('click','#btn-emailin-delete', function(e){
   e.preventDefault(); 
   let id = $(this).attr("data-sid")
   url= $(this).attr('data-url');
@@ -38,7 +38,7 @@ $('#tbody-email-in').on('click','#btn-emailin-delete', function(e){
 }) ;   
 
 
-$('#tbody-email-in').on('click','#btn-email-reply', function(e){
+$('#tbody').on('click','#btn-email-reply', function(e){
   e.preventDefault(); 
 
   let id = $(this).attr("data-sid")
@@ -86,17 +86,17 @@ $('#button-reply').on('click',function(e){
 
     }
   mythis = $(this)  
+  
+  
   $.ajax({
     url:url,
     method :"POST",
     data : mydata,
     
     success:function(data){
-      console.log(data)
+      console.log('ajax success :',data)
       if (data.status==1){
-        console.log('email db is updated')
-        
-
+        console.log('--->email db is updated ***** \n\n\n')
         location.reload(true)
         return false;
 
@@ -105,6 +105,12 @@ $('#button-reply').on('click',function(e){
           console.log('student --- unable to update')
 
         }
+
+
+    },
+    error: function(error){
+      console.log('returned error :',error)
+      handleAlerts('danger','opps..something went wrong')
 
 
     }

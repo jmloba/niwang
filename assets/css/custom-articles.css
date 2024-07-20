@@ -73,6 +73,9 @@
   justify-content: center;
   
 }
+.article-form{
+  overflow: scroll;
+}
 
 
 
@@ -94,6 +97,7 @@
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
+  
 
 }
 
@@ -101,15 +105,18 @@
 #create-article  form{
   /* background-color: brown; */
   min-width : 18em;
-  max-width :40 em;
   width :30em;
-
+  
 }
+
+#create-article  form label{
+  color : blue !important;
+}
+
 
 #create-article .article-form #form-data-body{
 height : 5em;
 max-height: 20em;
-
 max-width: 35em;;
 
 }

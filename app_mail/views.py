@@ -93,8 +93,9 @@ def email_list_view(request):
 
  
 
-      send_email_to_queries (request,email_from,email_to,email_body,package_amount)  
-      print(f' after email--->>>')
+      # send_email_to_queries (request,email_from,email_to,email_body,package_amount)  
+      
+      print(f'\n\n\n after email--->>> \n\n\n')
 
    
     
@@ -102,15 +103,23 @@ def email_list_view(request):
         email_from = email_from, 
         email_to = email_to, 
         email_body=email_body ,
+
+        email_ref_id=request.POST.get('sid'),
+
         package_amount = package_amount
       
         )
       instance.save()
 
-      id =request.POST.get("sid")
-      emaildb=EmailDB.objects.get(pk=id)
+      sid_id =request.POST.get("sid")
+
+      emaildb=EmailDB.objects.get(pk=sid_id)
       emaildb.replied=True
+      
+
       emaildb.save()
+
+      print(f'returning status 1')
       return JsonResponse({"status": 1})
     
   context = {'emails':emails, 'form':form}
@@ -153,6 +162,7 @@ def email_reply(request)  :
 
 def answered_email(request):
   email_ans = EmailANS.objects.all().order_by('-created_date')
+  
   context={'email_ans':email_ans}
   return render(request,'app_mail/answered_email.html', context )
 

@@ -27,6 +27,7 @@ class EmailANS(models.Model):
   email_from =models.CharField(max_length=50, null=True,blank=True)
   email_to =models.CharField(max_length=50, null=True,blank=True)
   email_body = models.TextField(max_length=400, null=True,blank=True)
+  email_ref_id = models.IntegerField(default=0,null=True, blank =True)
   created_date = models.DateTimeField(auto_now_add=True)
   package_amount  = models.DecimalField(max_digits=8, decimal_places=2, default=0, null=True,blank=True)
   

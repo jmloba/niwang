@@ -34,9 +34,11 @@ header{
   background-color: rgb(95, 196, 239);
   align-items: center;
   justify-content: space-between;
+  top :2em;
 }
 
 .primary-header .nav{
+  
   position:fixed;
   
 }
@@ -107,7 +109,7 @@ nav.navbar.second-nav,navbar-dark.bg-dark{
   position:relative;
 }
 
-@media(max-width:35em){
+@media(max-width:390px){
   .primary-navigation a:hover{
     color:blue;
 

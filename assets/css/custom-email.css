@@ -2,7 +2,7 @@
   background-color: rgb(244, 238, 226);
 
 }
-#email-listview .main-div{
+.main-div{
   display : flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -17,18 +17,14 @@
   border-width: 2px;  
 }
 #email-listview label{
-  color : var(   --colorgold1);
-
-
+  color :  rgb(7, 7, 58);
+  
 }
 
 #email_me h3{
   color : var(  --color-fb-blue ) ;
 }
-
-
 #email_me .email-form{
-  
   margin :1em 1em;
   padding :2em 2em;
 }
@@ -39,4 +35,23 @@
 }
 #email_me form label{
   color : var(--colorgold1 );
+}
+
+
+@media only screen and (max-width:390px){
+  .my-container.my-container-para{
+    padding : 3px 3px !important;
+  }
+
+  
+#answered-email    .my-container.my-container-para{
+  max-height : 60em;
+}
+
+
+
+ form.email-form{
+    margin : 5px 40px !important;
+  }
+
 }
