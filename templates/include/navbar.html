@@ -60,13 +60,13 @@
               <span aria-hidden="true"></span>Inquire
             </a>
         </li>
-        {% if user.user.programmer_access %}
+        {% if user.user.admin_only %}
         <li class="nav-item dropdown ">
           <a href="#" class=" dropdown-toggle" id="navbarDropdown-feature" role="button"
           data-bs-toggle ="dropdown"
           aria-expanded="false"
           >
-            Programmers
+            Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown-feature" >
             <li><a href="{% url 'app_mail:email-list-view' %}" class="dropdown-item">Email_list</a></li>
@@ -74,9 +74,11 @@
             {% if user.user.todo_rights %}
             <li><a href="{% url 'appsample:todo_add' %}" class="dropdown-item">Add Todo </a></li>
             {% endif %}
+
+            {% if user.user.programmer_access %}
             <!-- sample forms -->
             <li><a href="{% url 'app_forms:topics' %}" class="dropdown-item">Topics</a></li>
-
+            {% endif %}
 
           </ul>
         </li>
