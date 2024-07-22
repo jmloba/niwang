@@ -35,12 +35,9 @@
       </li>
       {% if user.is_authenticated %}
 
-        <li>
-          <a href="{% url 'articles:article_list' %}"><span aria-hidden="true"></span>Articles</a>
-        </li>
 
         <li>
-          <a href="{% url 'articles:article-list2' %}"><span aria-hidden="true"></span>Articles 2</a>
+          <a href="{% url 'articles:article-list2' %}"><span aria-hidden="true"></span>Articles</a>
         </li>
 
 

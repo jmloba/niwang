@@ -13,9 +13,15 @@
       <article class="card__article"> 
         <img class = "card__img" src="{{article.thumb.url}}" alt="card img">
         <div class="card__data">
-          <span class="card__description">{{article.slug}}</span>
+          <!-- <span class="card__description">{{article.slug}}</span> -->
           <h2 class="card__title">{{article.title}}</h2>
           <a href="{% url 'articles:article-detail-view' article.id %}" class="card__button">Read More</a> 
+          
+          <div class="text-end">
+            {% if user.user.article_delete%}
+            <a type ='button'  class="btn btn-danger btn-sm" href="{% url 'articles:article_delete' article.id %}"><i class="bi bi-trash-fill"></i></a>
+            {%endif%}
+          </div>
 
         </div>
       </article>

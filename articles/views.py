@@ -49,7 +49,7 @@ def article_delete(request,pk=None):
   article.delete()
   messages.success(request,'Successfuly deleted the article')
   
-  return redirect('articles:article_list')
+  return redirect('articles:article-list2')
 
 
 @login_required(login_url='accounts:login_view')
@@ -68,7 +68,7 @@ def article_create(request):
       instance = form.save(commit = False)
       instance.author = request.user
       instance.save()
-      return redirect('articles:article_list')
+      return redirect('articles:article-list2')
     else :
       messages.info(request, form.errors)
   else:  
