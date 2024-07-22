@@ -38,6 +38,12 @@
         <li>
           <a href="{% url 'articles:article_list' %}"><span aria-hidden="true"></span>Articles</a>
         </li>
+
+        <li>
+          <a href="{% url 'articles:article-list2' %}"><span aria-hidden="true"></span>Articles 2</a>
+        </li>
+
+
         {% if user.user.article_create %}
           <li>
             <a href="{% url 'articles:article_create' %}"><span aria-hidden="true"></span>Create Articles</a>

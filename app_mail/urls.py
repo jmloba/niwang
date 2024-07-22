@@ -13,7 +13,8 @@ urlpatterns = [
   re_path(r'^email_list_view/$',views.email_list_view, name='email-list-view'),
   re_path(r'^emailin_reply/$',views.email_reply, name='email-reply'),
   re_path(r'^answered_email/$',views.answered_email, name='answered-email'),
-
+  
+  re_path(r'^answered-email-toggle/$',views.answered_email_toggle, name='answered-email-toggle'),
 
   
 ]

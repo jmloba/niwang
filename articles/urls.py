@@ -6,9 +6,11 @@ app_name='articles'
 
 urlpatterns = [
 
-  # re_path(r'^article_list$',views.article_list, name='article_list'),
+  
   
   re_path(r'^article_list$',views.article_list, name='article_list'),  
+
+  re_path(r'^article_list2$',views.article_list2, name='article-list2'),  
 
   re_path(r'^article_create$',views.article_create, name='article_create'),
   re_path(r'^main_page$',views.main_page, name='main_page'),

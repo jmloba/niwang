@@ -13,27 +13,23 @@ from app_mail.forms import Email_Answer
 # Create your views here.
 def email_me(request):
   user = UserAccess.objects.get(user=request.user)
-
- 
-  print(f'user is : {user} ')
   if request.method=='POST':
     form = CreateEmailForm(request.POST)
     if form.is_valid():
-      print('email form is valid ---->>>>>')
       instance=form.save(commit=False)
-
       instance.email_from =user.user.email
       instance.email_to=settings.DEFAULT_FROM_EMAIL
       instance.user = request.user
-
-
       instance.save()
-
       mail_subject= 'Inquiries for Rent' 
       email_template = 'app_mail/email/inquiry_email.html'
       email_body = form.cleaned_data['email_body']
-
-      send_email(request,mail_subject,email_template, email_body)
+      
+      if user.send_email_trigger :
+        send_email(request,mail_subject,email_template, email_body)
+      else : 
+        
+        print(f"\nNo email sent !!! \n useraccess -> send_email_trigger : {user.send_email_trigger} ")  
       return redirect('articles:main_page')
   else:
     form=CreateEmailForm()
@@ -41,47 +37,34 @@ def email_me(request):
   return render(request,'app_mail/email_me.html', context )  
 
 def email_list(request):
- 
   emails= EmailDB.objects.all() 
   if request.method=='POST':
-
     form = ResponseEmail(request.POST)
     if form.is_valid():
       instance=form.save(commit=False)
       instance.email_from = settings.DEFAULT_FROM_EMAIL
       instance.email_to = form.cleaned_data['email_to']
-      
       # instance.user = request.user
       instance.save()
-
-
       response_to = form.cleaned_data['email_to']
       mail_subject= 'Response from Inquiry' 
       email_template = 'app_mail/email/inquiry_response.html'
       email_body = form.cleaned_data['email_body']
       print(f'sending to {response_to} ')
-
       send_response_email(request,mail_subject,email_template, email_body,response_to)
       return redirect('articles:main_page')
-
-
-
-      
   else:    
     form=ResponseEmail()
   context={'form':form,'emails':emails}
   return render(request,'app_mail/email_list.html', context )  
 
-
-
 def email_list_view(request):
   emails=EmailDB.objects.filter(replied=False)
   form = Email_Answer()
+  user = UserAccess.objects.get(user=request.user)
   if request.method=='POST':
     form=Email_Answer(request.POST)
     if form.is_valid():
-    
-
       email_from      = settings.EMAIL_HOST_USER
       email_to        = request.POST.get('form_data_emailto')
       email_body      = request.POST.get('form_data_body')
@@ -90,15 +73,12 @@ def email_list_view(request):
       print (f'***request email : {email_to}')
       print (f'***request body : {email_body}')
       print (f'***request amount : {package_amount}')
+      if user.send_email_trigger :
+        send_email_to_queries (request,email_from,email_to,email_body,package_amount)  
+      else :
+        print(f'\nReply to query -> sending email :trigger is off')   
 
- 
 
-      # send_email_to_queries (request,email_from,email_to,email_body,package_amount)  
-      
-      print(f'\n\n\n after email--->>> \n\n\n')
-
-   
-    
       instance = EmailANS.objects.create(
         email_from = email_from, 
         email_to = email_to, 
@@ -156,7 +136,25 @@ def emailin_delete(request):
     return JsonResponse({"status": 1})
   else:
     return JsonResponse({"status": 0})  
-  
+
+
+def answered_email_toggle (request) :
+  print(f'views answered email toggle')
+  if request.method == "POST":  
+    id = request.POST.get("stuid")
+    print(f' text')
+    email = EmailDB.objects.get(pk=id)
+    email.replied=False
+    email.save()
+    print(f'\n\n--->>>>email--saved')
+
+
+    return JsonResponse({"status": 1})
+  else:
+    print(f'views answered email toggle: reque3st is not post')
+    return JsonResponse({"status": 0})  
+
+
 def email_reply(request)  :
   pass
 
@@ -166,4 +164,3 @@ def answered_email(request):
   context={'email_ans':email_ans}
   return render(request,'app_mail/answered_email.html', context )
 
- 

@@ -9,6 +9,10 @@
   --main-font-style :  normal;
   --main-font-size : 14px;
 
+  --h2-font-size : 30px;
+  --small-font-size :12px;
+  --title-color : rgb(4, 10, 125);
+  --card-button-font-size :16px;
 
   --color1 : #071952;
   --color2 : #088395;
@@ -25,13 +29,13 @@
    --border-color:var(--border-gold);
    --border-color2:var(--border-gold2);
  
-   --color-article-title  :rgb(20, 53, 144);
+   --color-article-title  :rgb(91, 28, 167);
    --card-background: #f9e0bbf9;
 
    --my-container-background:#dbeedda9;
    
    --color-fb-blue :rgba(53, 32, 237, 0.885);
-   --color-bloody-red : #fd1f1f;
+   --color-bloody-red : #bc1717;
  
    --margin-top : 0;
    --margin-right : 0;

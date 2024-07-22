@@ -23,6 +23,9 @@
                     <th scope="col">From</th>
                     <th scope="col">Message</th>
                     <th scope="col">Date</th>
+                    {% if user.user.programmer_access %}
+                    <th scope="col">Ref Id</th>
+                    {% endif %}
                     <th scope="col">Action1</th>
                     <th scope="col">Action2</th>
                   </tr>
@@ -33,6 +36,10 @@
                     <td id="tr-email-from-{{email.id}}">{{email.email_from}}</td>
                     <td>{{email.email_body}}</td>
                     <td>{{email.created_date}}</td>
+                    {% if user.user.programmer_access %}
+                    <td>{{email.id}}</td>
+                    {% endif %}
+
 
                     <td  class="td-action1">
                       <button type="button"  id='btn-email-reply' class="reply-btn btn btn-primary btn-sm"  

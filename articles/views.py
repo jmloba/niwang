@@ -21,6 +21,13 @@ def article_list(request):
   return render(request,'article/article_list.html', context)
 
 
+@login_required(login_url='accounts:login_view')
+def article_list2(request):
+  articles = Article.objects.all().order_by('date')
+  context ={ 'articles':articles}
+  return render(request,'article/article_list2.html', context)
+
+
 def article_detail(request,slug):
   article = Article.objects.get(slug=slug)
   if article:

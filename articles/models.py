@@ -30,6 +30,7 @@ class UserAccess(models.Model):
   admin_only=models.BooleanField(default=False)
   todo_access_all = models.BooleanField(default=False)
   todo_rights = models.BooleanField(default=False)
+  send_email_trigger  = models.BooleanField(default=False)
 
   # location=models.CharField(max_length=30, null=True, blank=True)
 

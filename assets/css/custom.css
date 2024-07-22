@@ -34,12 +34,7 @@ h1,h2,h3,h4,h5{
   margin: 0;
 }
 
-/* menu text-color */
-a,a:hover, a:visited{
-  color :rgb(23, 3, 246);
-  font-size: 15px;
 
-}
 .color1{
   background-color:aqua
 }
@@ -232,6 +227,31 @@ a,a:hover, a:visited{
   color: white !important;
 
 }
+
+/* newly added */
+/* button a, */
+.btn.btn-mybtn {
+  padding : .5em 10px;
+  background-color: rgba(55, 63, 232, 0.901) !important;
+  color :rgb(243, 243, 237) !important;
+  border :0;
+  border-radius : 1rem;
+  cursor :pointer;
+  transition : transform 1500ms;
+}
+
+ button a:hover,
+.btn.btn-mybtn:hover,
+.btn.btn-mybtn:focus-visible{
+  background-color: rgb(8, 94, 31) !important;
+  color :yellow !important;
+  transform: translateY(-.75rem);
+  transition:  transform 250ms;
+}
+
+
+
+
 .login_btn:focus {
   box-shadow: none !important;
   outline: 0px !important;
@@ -426,10 +446,6 @@ my-container-1{
 
 }
 
-.btn.btn-mybtn:hover{
-  color : white !important;
-  background-color: #057242;
-}
 
 
 .btn-mybtn a{
@@ -482,7 +498,7 @@ table td{
 
 }
 
-@media (min-width:391px) and (max-width:700px) {
+@media (max-width:700px) {
   *{
     font-size : 12px;
   }
@@ -494,8 +510,5 @@ table td{
     margin-left : 10px !important;
     margin-right : 10px;
   }
-
-}
-@media (min-width:701)  {
 
 }

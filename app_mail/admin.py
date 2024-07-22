@@ -6,7 +6,7 @@ from .models import EmailDB,EmailANS
 # list of emails received
 class EmailDBAdmin(admin.ModelAdmin):
 
-  list_display=('user','email_from','created_date','replied_date','replied',
+  list_display=('id','user','email_from','created_date','replied_date','replied',
   'email_body',)
   list_editable =('replied',)
   ordering=('-created_date',)

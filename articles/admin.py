@@ -13,9 +13,9 @@ class ArticleUserAdmin(admin.ModelAdmin):
   fieldsets=()
 
 class UserAccessAdmin(admin.ModelAdmin) : 
-  list_display=('user','article_create','article_delete','programmer_access','admin_only','todo_access_all','todo_rights',)
+  list_display=('user','article_create','article_delete','programmer_access','admin_only','send_email_trigger','todo_access_all','todo_rights',)
 
-  list_editable =('article_create','article_delete','programmer_access','admin_only','todo_access_all','todo_rights',)
+  list_editable =('article_create','article_delete','programmer_access','admin_only','send_email_trigger','todo_access_all','todo_rights',)
   ordering=('user',)
 
   filter_horizontal=()
